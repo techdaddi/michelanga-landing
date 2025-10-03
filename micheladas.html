@@ -75,7 +75,7 @@
             color: #FF6B35;
         }
         
-        /* Contenedor del PDF */
+        /* Contenedor del PDF - Desktop */
         .pdf-container {
             position: fixed;
             top: 60px;
@@ -89,6 +89,73 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* Vista móvil - Botón de descarga */
+        .mobile-view {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px 20px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .mobile-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .mobile-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .mobile-description {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 35px;
+            background-color: #FF6B35;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .download-button:hover {
+            background-color: #e55a28;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+        }
+        
+        .download-icon {
+            font-size: 1.5rem;
         }
         
         /* Loading indicator */
@@ -130,7 +197,14 @@
                 font-size: 0.95rem;
             }
             
+            /* Ocultar iframe en móvil */
             .pdf-container {
+                display: none;
+            }
+            
+            /* Mostrar vista móvil */
+            .mobile-view {
+                display: flex;
                 top: 55px;
             }
         }
@@ -142,6 +216,23 @@
             
             .back-button {
                 padding: 8px 12px;
+            }
+            
+            .mobile-icon {
+                font-size: 4rem;
+            }
+            
+            .mobile-title {
+                font-size: 1.3rem;
+            }
+            
+            .mobile-description {
+                font-size: 0.95rem;
+            }
+            
+            .download-button {
+                padding: 15px 30px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -157,7 +248,7 @@
         <div class="menu-title">MENÚ DE MICHELADAS</div>
     </header>
     
-    <!-- Contenedor del PDF -->
+    <!-- Vista Desktop - Visor PDF integrado -->
     <div class="pdf-container">
         <!-- Loading indicator -->
         <div class="loading" id="loading">
@@ -172,6 +263,19 @@
             src="menus/micheladas.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
             onload="document.getElementById('loading').style.display='none'"
         ></iframe>
+    </div>
+    
+    <!-- Vista Móvil - Botón de descarga/apertura -->
+    <div class="mobile-view">
+        <div class="mobile-icon">🍹</div>
+        <h2 class="mobile-title">Menú de Micheladas</h2>
+        <p class="mobile-description">
+            Toca el botón para ver nuestro menú completo de micheladas
+        </p>
+        <a href="menus/micheladas.pdf" target="_blank" class="download-button">
+            <span class="download-icon">📄</span>
+            <span>Ver Menú</span>
+        </a>
     </div>
     
 </body>
