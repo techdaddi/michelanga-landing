@@ -1,0 +1,329 @@
+/* ============================================
+   MICHELANGA - LANDING PAGE MINIMALISTA
+   Diseño: Ultra-minimalista, elegante, responsive
+   ============================================ */
+
+/* ========== RESET Y VARIABLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores minimalista */
+    --color-primary: #000000;      /* Negro */
+    --color-background: #FFFFFF;   /* Blanco */
+    --color-accent: #FF6B35;       /* Naranja vibrante */
+    --color-gray: #666666;         /* Gris para textos secundarios */
+    
+    /* Espaciado generoso */
+    --spacing-xl: 120px;
+    --spacing-lg: 80px;
+    --spacing-md: 60px;
+    --spacing-sm: 40px;
+    --spacing-xs: 20px;
+    
+    /* Tipografía */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ========== ESTILOS BASE ========== */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    line-height: 1.6;
+    font-weight: 300;
+    
+    /* Scroll suave */
+    scroll-behavior: smooth;
+    
+    /* Evitar scroll horizontal */
+    overflow-x: hidden;
+}
+
+/* Container - Ancho máximo y padding responsivo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* ========== HEADER - LOGO PROTAGONISTA ========== */
+.header {
+    /* Espaciado generoso arriba y abajo */
+    padding: var(--spacing-lg) 0;
+    
+    /* Centrado perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Altura mínima para impacto visual */
+    min-height: 60vh;
+}
+
+.logo-container {
+    text-align: center;
+    
+    /* Animación sutil de entrada */
+    animation: fadeInUp 1s ease-out;
+}
+
+.logo {
+    /* Logo grande y protagonista */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    
+    /* Sombra sutil para profundidad */
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
+    
+    /* Transición suave en hover */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    /* Efecto hover sutil */
+    transform: translateY(-5px);
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.12));
+}
+
+/* ========== MAIN - SECCIÓN DE MENÚS ========== */
+.main {
+    padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+}
+
+.main-title {
+    /* Tipografía minimalista */
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    /* Espaciado generoso */
+    margin-bottom: var(--spacing-md);
+    
+    /* Color sutil */
+    color: var(--color-primary);
+    
+    /* Animación de entrada */
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* ========== NAVEGACIÓN DE MENÚS ========== */
+.menu-nav {
+    /* Grid responsive para los botones */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-sm);
+    
+    /* Centrado y ancho máximo */
+    max-width: 800px;
+    margin: 0 auto var(--spacing-sm) auto;
+}
+
+.menu-button {
+    /* Layout interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    
+    /* Espaciado interno generoso */
+    padding: var(--spacing-md) var(--spacing-sm);
+    
+    /* Estilo minimalista */
+    background-color: var(--color-background);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    
+    /* Tipografía */
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 400;
+    
+    /* Transiciones suaves */
+    transition: all 0.3s ease;
+    
+    /* Cursor pointer */
+    cursor: pointer;
+    
+    /* Altura mínima para consistencia */
+    min-height: 180px;
+}
+
+/* Efecto hover - Acento naranja */
+.menu-button:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-background);
+    
+    /* Elevación sutil */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+}
+
+/* Ícono del menú */
+.menu-icon {
+    font-size: 4rem;
+    line-height: 1;
+    
+    /* Transición para el hover */
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover .menu-icon {
+    /* Animación sutil del ícono en hover */
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Texto del menú */
+.menu-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ========== SUBTÍTULO ========== */
+.subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    
+    /* Espaciado */
+    margin-top: var(--spacing-sm);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    /* Espaciado */
+    padding: var(--spacing-md) 0;
+    
+    /* Borde superior sutil */
+    border-top: 1px solid #f0f0f0;
+    
+    /* Posición al final */
+    margin-top: auto;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    font-weight: 300;
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 768px) {
+    :root {
+        /* Reducir espaciados en mobile */
+        --spacing-xl: 80px;
+        --spacing-lg: 60px;
+        --spacing-md: 40px;
+        --spacing-sm: 30px;
+    }
+    
+    .header {
+        min-height: 50vh;
+        padding: var(--spacing-md) 0;
+    }
+    
+    .logo {
+        max-width: 350px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .menu-nav {
+        /* Una columna en mobile */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .menu-button {
+        min-height: 160px;
+    }
+    
+    .menu-icon {
+        font-size: 3rem;
+    }
+    
+    .menu-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xl: 60px;
+        --spacing-lg: 40px;
+        --spacing-md: 30px;
+        --spacing-sm: 20px;
+    }
+    
+    .logo {
+        max-width: 280px;
+    }
+    
+    .main-title {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
+    
+    .menu-button {
+        padding: var(--spacing-sm) var(--spacing-xs);
+        min-height: 140px;
+    }
+    
+    .menu-icon {
+        font-size: 2.5rem;
+    }
+    
+    .menu-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .logo {
+        max-width: 600px;
+    }
+}
